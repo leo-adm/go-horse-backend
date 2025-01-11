@@ -1,4 +1,4 @@
-import type { JwtPayload } from '@clerk/types';
+import type { JwtPayload } from "@clerk/types"
 
 export enum State {
   PAUSED = "PAUSED",
@@ -9,40 +9,40 @@ export enum State {
 }
 
 export type User = {
-  id: string;
-  username: string;
-  balance: number;
-};
+  id: string
+  username: string
+  balance: number
+}
 
 export type Horse = {
-  id: string;
-  name: string;
-};
+  id: string
+  name: string
+}
 
 export type RacingHorse = Horse & {
-  odd: number;
-};
+  odd: number
+}
 
 export type Bet = {
-  userId: string;
-  horseId: string;
-  amount: number;
-};
+  userId: string
+  horseId: string
+  amount: number
+}
 
 export type HorsePosition = {
-  horseId: string;
-  position: number;
-};
+  horseId: string
+  position: number
+}
 
 export type Status = {
-  state: State;
-  currentRaceHorses?: RacingHorse[];
-  currentRacePositions?: HorsePosition[];
-};
+  state: State
+  currentRaceHorses?: RacingHorse[]
+  currentRacePositions?: HorsePosition[]
+}
 
-export type Roles = 'admin' | 'moderator'
+export type Roles = "admin" | "moderator"
 
-export type CustomJwtSessionClaims = JwtPayload &  {
+export type CustomJwtSessionClaims = JwtPayload & {
   metadata: {
     role?: Roles
   }
